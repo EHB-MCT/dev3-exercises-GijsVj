@@ -9,8 +9,8 @@ fun challengeOne() {
     println("What are you gonna do?: close combat - keep distance and shoot - try to talk")
     val userAnswer = readLine()
 
-    if (answers.contains(userAnswer)) {
-        println("Good job you're Iron man armor is too strong for Clint to beat in hand-to-hand combat")
+    if (userAnswer == "close combat") {
+        println("Good job your Iron man armor is too strong for Clint to beat in hand-to-hand combat")
         println("You hit him in the head and he is back")
         println("HAWKEYE JOINED YOUR TEAM!!")
         println("You will be Hawkeye for the next battle")
@@ -42,6 +42,23 @@ fun challengeTwo() {
 fun challengeThree() {
     println("You will play as Black Widow for the next battle")
     println("You run into Loki who is with The incredible Hulk aka Doctor Bruce Banner")
+    val answers = setOf<String>("guns", "electric sticks", "invisibility cloaking")
+    println("What weapon are you gonna use?: guns - electric sticks - invisibility cloaking")
+    val userAnswer = readLine()
+
+    if (userAnswer == "electric sticks") {
+        println("Good job! With your electric sticks you shock the hulk and his brain snaps back to reality")
+        println("You turn to Loki to go after him but he already teleported away")
+        println("HULK JOINED YOUR TEAM!!")
+        println("You will be Hulk for the next battle")
+
+    } else if(userAnswer == "invisibility cloaking") {
+        println("Loki saw through uour cloacking and mind controlled you again")
+        challengeTwo()
+    } else {
+        println("The hulk got angry and smashed you")
+        gameover()
+    }
 }
 
 fun gameover() {
