@@ -53,7 +53,7 @@ fun challengeThree() {
         println("You will be Hulk for the next battle")
 
     } else if(userAnswer == "invisibility cloaking") {
-        println("Loki saw through uour cloacking and mind controlled you again")
+        println("Loki saw through your cloacking and mind controlled you again")
         challengeTwo()
     } else {
         println("The hulk got angry and smashed you")
