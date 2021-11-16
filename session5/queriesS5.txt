@@ -1,0 +1,51 @@
+Queries session 5
+
+Batch 1:
+
+ex 1:
+SELECT productName FROM products 
+WHERE productCode = 'S24_3856';
+
+ex2:
+SELECT AVG(buyPrice) FROM products;
+
+ex3:
+SELECT COUNT(productName) FROM products
+WHERE productName LIKE '% Ford %';
+
+ex4:
+SELECT MAX(buyPrice) FROM products;
+
+ex5:
+SELECT COUNT(productLine) FROM products
+WHERE productLine = 'Ships';
+
+Batch 2:
+
+ex1:
+SELECT COUNT(*) FROM orders
+WHERE customerNumber = '328';
+
+ex2:
+SELECT COUNT(*) FROM orders
+INNER JOIN customers ON customers.customerNumber = orders.customerNumber
+WHERE customers.contactFirstName = 'Julie' AND customers.contactLastName = 'Young';
+
+ex3:
+SELECT COUNT(*) FROM customers
+WHERE country = 'USA' and creditLimit = '0.00';
+
+ex4:
+SELECT customers.customerName, AVG(amount) AS average FROM payments
+INNER JOIN customers ON customers.customerNumber = payments.customerNumber
+GROUP BY customers.customerNumber
+ORDER BY average DESC
+LIMIT 1;
+
+Batch 3:
+
+ex1:
+SELECT SUM(amount) FROM payments
+INNER  JOIN customers ON customers.customerNumber = payments.customerNumber
+WHERE customers.contactFirstName = 'William' AND customers.contactLastName = 'Brown';
+
