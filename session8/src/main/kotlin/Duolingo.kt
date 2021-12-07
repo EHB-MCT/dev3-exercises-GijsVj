@@ -1,7 +1,6 @@
 class Duolingo(val roundSize: Int = 5,  val language: String = "fr") {
 
 
-
     var words = mutableSetOf<Word>(
         FrenchWord("vache", "koe"),
         EnglishWord("spaghetti", "spaghetti"),
